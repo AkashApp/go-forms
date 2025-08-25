@@ -9,6 +9,12 @@ import Results from './components/Results';
 import ResultsSuccess from './components/ResultsSuccess';
 import AuthForm from './components/auth/AuthForm';
 import QuizList from './components/admin/QuizList';
+import AboutPage from './components/static/AboutPage';
+import ContactPage from './components/static/ContactPage';
+import TermsPage from './components/static/TermsPage';
+import PrivacyPolicyPage from './components/static/PrivacyPolicyPage';
+import RefundCancellationPage from './components/static/RefundCancellationPage';
+import ShippingPolicyPage from './components/static/ShippingPolicyPage';
 import QuizEditor from './components/admin/QuizEditor';
 import QuizAnalytics from './components/admin/QuizAnalytics';
 import AnalyticsDashboard from './components/admin/AnalyticsDashboard';
@@ -76,6 +82,14 @@ function App() {
               <Route path="quiz/view/:id" element={<QuizView />} />
               <Route path="results" element={<Results />} />
               <Route path="results/success" element={<ResultsSuccess />} />
+              
+              {/* Static/Policy Pages */}
+              <Route path="about" element={<AboutPage />} />
+              <Route path="contact" element={<ContactPage />} />
+              <Route path="terms" element={<TermsPage />} />
+              <Route path="privacy" element={<PrivacyPolicyPage />} />
+              <Route path="refund-cancellation" element={<RefundCancellationPage />} />
+              <Route path="shipping" element={<ShippingPolicyPage />} />
               
               {/* Templates Routes */}
               <Route path="templates" element={<QuizTemplateHome />} />

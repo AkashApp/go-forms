@@ -36,7 +36,7 @@ import {
 import { useAuth } from '../lib/auth';
 import Dashboard from './Dashboard';
 import { useTheme } from '../lib/theme';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/index.css';
 import Modal, { FormState } from './Modal';
 
@@ -631,20 +631,78 @@ function Welcome() {
         </section>
 
       </div>
-      <footer className="bg-white border-t border-gray-200">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <img src="/goformlogo.svg" alt="Logo" className="h-32 w-auto" />
-              {/* <span className="text-xl font-bold text-brand-green">GoForms</span> */}
+      <footer className="bg-gray-900 text-white border-t border-gray-800">
+        <div className="container mx-auto py-12 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+            {/* Brand Section */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/goformlogo.svg" alt="Logo" className="h-20 w-auto" />
+              </div>
+              <p className="text-gray-400 max-w-sm">
+                Create powerful forms, surveys, and assessments with GoForms. 
+                Smart data collection with AI-powered insights.
+              </p>
             </div>
-            <div className="flex items-center gap-8">
-              <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">Privacy</a>
-              <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">Terms</a>
-              <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">Contact</a>
+            
+            {/* Company Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className="text-gray-600">
-              © {new Date().getFullYear()} GoForms. All rights reserved.
+            
+            {/* Legal Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/terms" className="text-gray-300 hover:text-white transition-colors">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Policies */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Policies</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/refund-cancellation" className="text-gray-300 hover:text-white transition-colors">
+                    Refund & Cancellation
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/shipping" className="text-gray-300 hover:text-white transition-colors">
+                    Shipping/Delivery
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          {/* Bottom Section */}
+          <div className="border-t border-gray-800 pt-8">
+            <div className="text-center">
+              <div className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} GoForms. All rights reserved.
+              </div>
             </div>
           </div>
         </div>
